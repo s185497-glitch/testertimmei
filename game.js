@@ -241,3 +241,77 @@ startBtn.addEventListener("click",()=>{
     document.getElementById("startScreen").style.display="none";
 
 });
+// =====================================
+// Menu Controls
+// =====================================
+
+const pauseMenu = document.getElementById("pauseMenu");
+
+const resumeBtn = document.getElementById("resumeBtn");
+const restartBtn = document.getElementById("restartBtn");
+
+let paused = false;
+
+
+// Pause with Escape
+
+document.addEventListener("keydown", e => {
+
+    if(e.code === "Escape"){
+
+        paused = !paused;
+
+        if(paused){
+
+            pauseMenu.classList.remove("hidden");
+
+        }else{
+
+            pauseMenu.classList.add("hidden");
+
+        }
+
+    }
+
+});
+
+
+// Resume button
+
+resumeBtn.addEventListener("click", ()=>{
+
+    paused = false;
+
+    pauseMenu.classList.add("hidden");
+
+});
+
+
+// Restart button
+
+restartBtn.addEventListener("click", ()=>{
+
+    player.x = 120;
+    player.y = 100;
+
+    player.vx = 0;
+    player.vy = 0;
+
+    paused = false;
+
+    pauseMenu.classList.add("hidden");
+
+});
+
+
+// Stop game updates while paused
+
+const oldUpdate = update;
+
+update = function(dt){
+
+    if(paused) return;
+
+    oldUpdate(dt);
+
+};
