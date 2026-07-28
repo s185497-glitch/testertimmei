@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="style.css">
+
+    <!-- Pixel Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="gameContainer">
+
+    <canvas id="gameCanvas" width="960" height="540"></canvas>
+
+    <div id="hud">
+
+        <div id="storyBox" class="hidden">
+            <p id="storyText"></p>
+        </div>
+
+        <div id="stats">
+
+            <div id="crystals">
+                💎 <span id="crystalCount">0</span>
+            </div>
+
+            <div id="deaths">
+                ☠ <span id="deathCount">0</span>
+            </div>
+
+            <div id="timer">
+                ⏱ <span id="timerText">00:00.00</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="pauseMenu" class="hidden">
+
+    <h1>Echo Peak</h1>
+
+    <button id="resumeBtn">Resume</button>
+    <button id="restartBtn">Restart Level</button>
+
+</div>
+
+<div id="startScreen">
+
+    <h1>Echo Peak</h1>
+
+    <h2>Starring Kweerac</h2>
+
+    <p>
+        Restore the mountain's memories.
+    </p>
+
+    <button id="startBtn">
+        Begin Adventure
+    </button>
+
+    <div class="controls">
+
+        <h3>Controls</h3>
+
+        <p>A / D - Move</p>
+        <p>Space - Jump</p>
+        <p>Shift - Dash</p>
+        <p>E - Interact</p>
+        <p>R - Restart</p>
+        <p>Esc - Pause</p>
+
+    </div>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>
